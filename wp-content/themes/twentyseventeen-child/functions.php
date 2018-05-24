@@ -11,4 +11,14 @@ function my_theme_enqueue_styles() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+function my_acf_google_map_api( $api ){
+	
+	$api['key'] = 'AIzaSyA2UY-DMmke5CQHhXon5Zuwme_La0ixI-8';
+	
+	return $api;
+	
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 ?>
