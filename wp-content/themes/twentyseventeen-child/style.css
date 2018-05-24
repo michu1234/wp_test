@@ -16,6 +16,11 @@
     display: flex;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .logo {
     flex: 1;
 }
