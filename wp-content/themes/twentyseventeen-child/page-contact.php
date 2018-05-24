@@ -46,7 +46,10 @@ echo wp_get_attachment_link( $id, 'thumbnail' );?>
             
             </div>
             <div class="acf-map"></div>
-            </section>
+			</section>
+			<section class="employees">
+				<ul class="employees__list"></ul>
+			</section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
@@ -230,6 +233,25 @@ $(document).ready(function(){
 })(jQuery);
 </script>
 
+<script>
+window.addEventListener("load", function() {
+		fetch('https://api.myjson.com/bins/ohjhu').then(function(data){
+			data.json().then(function(response){
+				let data = response.team;
 
+				data.forEach(function(v){
+					let list = document.querySelector(".employees__list");
+					let node = document.createElement("LI");
+					let image = document.createElement("IMG")
+						image.setAttribute("src", v.photo);
+					let textnode = document.createTextNode(v.name);   
+					node.appendChild(image);      
+					node.appendChild(textnode);   
+					list.appendChild(node);     
+				})
+			})
+		})
+	});
+</script>
 
 

@@ -31,3 +31,16 @@
 	border: #ccc solid 1px;
 	margin: 20px 0;
 }
+
+.employees__list {
+list-style: none;
+}
+
+.employees__list li {
+    margin-bottom: 20px;
+}
+
+.employees__list li img{
+display: block;
+width: 100px;
+}
